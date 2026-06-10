@@ -11,26 +11,44 @@ $anstahl_home_products = array(
 	array(
 		'slug'        => 'thornoj',
 		'name'        => 'THORNOJ',
+		'category'    => __( 'Sealing Technology', 'anstahl-engineering' ),
 		'tagline'     => __( 'Industrial Sealing Solutions', 'anstahl-engineering' ),
 		'description' => __( 'High-performance packing and mechanical seal systems for rotating and static equipment in demanding process environments.', 'anstahl-engineering' ),
 		'accent'      => 'thornoj',
 		'icon'        => 'seal',
+		'capabilities' => array(
+			__( 'Packing Solutions', 'anstahl-engineering' ),
+			__( 'Mechanical Seal Systems', 'anstahl-engineering' ),
+			__( 'Rotating Equipment Reliability', 'anstahl-engineering' ),
+		),
 	),
 	array(
 		'slug'        => 'ormos',
 		'name'        => 'ORMOS',
+		'category'    => __( 'Precision Manufacturing', 'anstahl-engineering' ),
 		'tagline'     => __( 'Industrial Parts & Manufacturing', 'anstahl-engineering' ),
 		'description' => __( 'Precision manufacturing and custom engineering for industrial parts, fabricated assemblies, and application-specific components.', 'anstahl-engineering' ),
 		'accent'      => 'ormos',
 		'icon'        => 'gear',
+		'capabilities' => array(
+			__( 'Industrial Parts', 'anstahl-engineering' ),
+			__( 'Custom Engineering Parts', 'anstahl-engineering' ),
+			__( 'Fabricated Assemblies', 'anstahl-engineering' ),
+		),
 	),
 	array(
 		'slug'        => 'ragnvern',
 		'name'        => 'RAGNVERN',
+		'category'    => __( 'Thermal Protection', 'anstahl-engineering' ),
 		'tagline'     => __( 'Thermal Insulation Systems', 'anstahl-engineering' ),
 		'description' => __( 'Removable insulation blankets and heat protection systems engineered to improve energy efficiency and personnel safety.', 'anstahl-engineering' ),
 		'accent'      => 'ragnvern',
 		'icon'        => 'thermal',
+		'capabilities' => array(
+			__( 'Thermal Insulation Blanket', 'anstahl-engineering' ),
+			__( 'Heat Protection Systems', 'anstahl-engineering' ),
+			__( 'Energy Efficiency Solutions', 'anstahl-engineering' ),
+		),
 	),
 );
 
@@ -304,14 +322,37 @@ get_header();
 			<div class="grid grid--3 home-products products-overview__grid">
 				<?php foreach ( $anstahl_home_products as $index => $product ) : ?>
 					<div class="products-overview__item home-reveal-item" style="--reveal-delay: <?php echo esc_attr( $index * 0.12 ); ?>s">
-						<?php get_template_part( 'template-parts/components/card', 'product', $product ); ?>
+						<article class="card-product card-product--<?php echo esc_attr( $product['accent'] ); ?>">
+							<div class="card-product__header">
+								<p class="card-product__category"><?php echo esc_html( $product['category'] ); ?></p>
+								<div class="card-product__icon" aria-hidden="true">
+									<?php anstahl_icon( $product['icon'] ); ?>
+								</div>
+							</div>
+							<h3 class="card-product__name">
+								<a href="<?php echo esc_url( anstahl_get_page_url( 'products' ) . '#' . $product['slug'] ); ?>">
+									<?php echo esc_html( $product['name'] ); ?>
+								</a>
+							</h3>
+							<p class="card-product__tagline"><?php echo esc_html( $product['tagline'] ); ?></p>
+							<p class="card-product__desc"><?php echo esc_html( $product['description'] ); ?></p>
+							<ul class="card-product__capabilities">
+								<?php foreach ( $product['capabilities'] as $capability ) : ?>
+									<li><?php echo esc_html( $capability ); ?></li>
+								<?php endforeach; ?>
+							</ul>
+							<a class="card-product__link" href="<?php echo esc_url( anstahl_get_page_url( 'products' ) . '#' . $product['slug'] ); ?>">
+								<?php esc_html_e( 'Learn more', 'anstahl-engineering' ); ?>
+								<span aria-hidden="true"><?php anstahl_icon( 'arrow' ); ?></span>
+							</a>
+						</article>
 					</div>
 				<?php endforeach; ?>
 			</div>
 			<div class="section__cta products-overview__cta">
-				<p class="products-overview__cta-text">
-					<?php esc_html_e( 'Specify engineered products with application support, documentation, and industrial field experience.', 'anstahl-engineering' ); ?>
-				</p>
+				<h3 class="products-overview__cta-title">
+					<?php esc_html_e( 'Engineered product lines for demanding industrial environments.', 'anstahl-engineering' ); ?>
+				</h3>
 				<?php
 				anstahl_button( array(
 					'url'   => anstahl_get_page_url( 'products' ),

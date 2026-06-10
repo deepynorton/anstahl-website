@@ -1885,6 +1885,149 @@ body.nav-open {
   line-height: 1.65;
 }
 
+/* Products Overview V4.2 */
+.products-overview__grid {
+  align-items: stretch;
+}
+
+.products-overview__item {
+  height: 100%;
+}
+
+.products-overview .card-product {
+  min-height: 30rem;
+  height: 100%;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0%, transparent 30%),
+    linear-gradient(160deg, rgba(12, 21, 36, 0.94) 0%, rgba(5, 11, 20, 0.98) 100%);
+}
+
+.products-overview .card-product::after {
+  background:
+    linear-gradient(rgba(54, 163, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 163, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 20% 12%, rgba(54, 163, 255, 0.12) 0%, transparent 34%);
+  background-size: 36px 36px, 36px 36px, auto;
+}
+
+.products-overview .card-product--thornoj {
+  --product-accent: var(--color-thornoj);
+  --product-accent-rgb: 61, 122, 184;
+}
+
+.products-overview .card-product--ormos {
+  --product-accent: var(--color-ormos);
+  --product-accent-rgb: 107, 138, 157;
+}
+
+.products-overview .card-product--ragnvern {
+  --product-accent: var(--color-ragnvern);
+  --product-accent-rgb: 224, 122, 47;
+}
+
+.products-overview .card-product::before {
+  background: var(--product-accent, var(--color-accent));
+  box-shadow: 0 0 24px rgba(54, 163, 255, 0.18);
+}
+
+.products-overview .card-product:hover {
+  border-color: rgba(var(--product-accent-rgb, 54, 163, 255), 0.55);
+  box-shadow:
+    0 28px 76px rgba(0, 0, 0, 0.48),
+    0 0 40px rgba(var(--product-accent-rgb, 54, 163, 255), 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.products-overview .card-product__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.products-overview .card-product__category {
+  margin: 0;
+  padding: 0.45rem 0.7rem;
+  color: var(--product-accent, var(--color-accent));
+  background: rgba(var(--product-accent-rgb, 54, 163, 255), 0.12);
+  border: 1px solid rgba(var(--product-accent-rgb, 54, 163, 255), 0.24);
+  border-radius: var(--radius-sm);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.products-overview .card-product__header .card-product__icon {
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+.products-overview .card-product__icon {
+  color: var(--product-accent, var(--color-accent));
+  background:
+    radial-gradient(circle at 30% 20%, rgba(var(--product-accent-rgb, 54, 163, 255), 0.18) 0%, transparent 60%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.018));
+  border-color: rgba(var(--product-accent-rgb, 54, 163, 255), 0.24);
+}
+
+.products-overview .card-product__tagline {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.products-overview .card-product__capabilities {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0 0 var(--space-6);
+  padding: var(--space-5) 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.products-overview .card-product__capabilities li {
+  position: relative;
+  padding-left: var(--space-5);
+  color: var(--color-text);
+  font-size: var(--text-body-sm);
+  line-height: 1.5;
+}
+
+.products-overview .card-product__capabilities li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid var(--product-accent, var(--color-accent));
+  border-radius: 50%;
+  background: rgba(var(--product-accent-rgb, 54, 163, 255), 0.35);
+  box-shadow: 0 0 14px rgba(var(--product-accent-rgb, 54, 163, 255), 0.28);
+}
+
+.products-overview .card-product__link {
+  margin-top: auto;
+  border-top: 0;
+  padding-top: 0;
+  color: var(--product-accent, var(--color-accent));
+}
+
+.products-overview__cta {
+  margin-inline: auto;
+}
+
+.products-overview__cta-title {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  line-height: 1.25;
+}
+
 /* Competence V4 */
 .home-v4 .home-competence .card-competence {
   background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
