@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Industrial turbine">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050B14"/>
+      <stop offset="50%" style="stop-color:#0C1524"/>
+      <stop offset="100%" style="stop-color:#050B14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" style="stop-color:#36A3FF;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#36A3FF;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <g transform="translate(960,480)" fill="none" stroke="#36A3FF" stroke-opacity="0.25" stroke-width="2">
+    <circle cx="0" cy="0" r="280"/>
+    <circle cx="0" cy="0" r="200"/>
+    <circle cx="0" cy="0" r="120"/>
+    <circle cx="0" cy="0" r="40" fill="#36A3FF" fill-opacity="0.3" stroke="none"/>
+    <line x1="0" y1="-280" x2="0" y2="280"/>
+    <line x1="-280" y1="0" x2="280" y2="0"/>
+    <line x1="-198" y1="-198" x2="198" y2="198"/>
+    <line x1="198" y1="-198" x2="-198" y2="198"/>
+  </g>
+  <g transform="translate(960,480)" fill="#0C1524" stroke="#36A3FF" stroke-opacity="0.4" stroke-width="1.5">
+    <path d="M0,-80 L20,-200 L0,-180 L-20,-200 Z"/>
+    <path d="M80,0 L200,20 L180,0 L200,-20 Z"/>
+    <path d="M0,80 L-20,200 L0,180 L20,200 Z"/>
+    <path d="M-80,0 L-200,-20 L-180,0 L-200,20 Z"/>
+  </g>
+</svg>
